@@ -1788,6 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cdbfd630662bb4ea20330b47de162b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventario: []
   imagenes:
   - {fileID: 704295202}
   - {fileID: 929347799}
@@ -1798,7 +1799,7 @@ MonoBehaviour:
   tama: 6
   actual: 0
   panel: {fileID: 1900666656}
-  globalobj: {fileID: 744607351}
+  globalobj: {fileID: 0}
 --- !u!114 &1029475506
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,13 +26,13 @@ public class Inventario : MonoBehaviour
         }
         else if(globalobj.inventario.Length != 0)
         {
-            print("carga");
+            //print("carga");
             for (int i = 0; i < globalobj.inventario.Length; i++)
             {
                 if (globalobj.inventario[i] != null)
                 {
                     GameObject prefab = buscaPrefab(globalobj.inventario[i]);
-                    print("prerf: " + prefab);
+                    //print("prerf: " + prefab);
                     agregaItem(Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity));
                 }
             }
@@ -40,7 +40,27 @@ public class Inventario : MonoBehaviour
         
         //imagenes = new Image[tama];
     }
-    
+
+    public void Update()
+    {
+        if (inventario.Length > 0)
+        {
+            if (inventario[0] != null)
+            {
+                if (Input.GetKeyDown("space"))
+                {
+                    inventario[0].transform.parent = null;
+                    inventario = new GameObject[tama];
+                    tama = 1;
+                    actual = 0;
+                }
+                
+                
+            }
+            
+        }
+    }
+
     public void agregaItem(GameObject obj)
     {
         if (actual < tama)
@@ -49,7 +69,8 @@ public class Inventario : MonoBehaviour
             datos item = (datos)obj.GetComponent("datos");
             globalobj.inventario[actual] = item.nombre;
             actual++;
-            obj.SetActive(false);
+            obj.transform.parent = gameObject.transform;
+            //obj.SetActive(false);
             //print("agrega");
         }
     }
