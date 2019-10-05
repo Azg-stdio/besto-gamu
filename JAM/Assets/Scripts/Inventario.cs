@@ -12,12 +12,14 @@ public class Inventario : MonoBehaviour
     public int actual = 0;
     public GameObject panel;
     public global globalobj;
+    public Movimiento movimiento;
 
     // Start is called before the first frame update
     void Start()
     {
 
         globalobj = (global) GameObject.Find("GLOBAL").GetComponent("global");
+        movimiento = (Movimiento)gameObject.GetComponent("Movimiento");
         inventario = new GameObject[tama];
         print(globalobj.inventario.Length);
         if (globalobj.inventario.Length == 0)
@@ -47,7 +49,7 @@ public class Inventario : MonoBehaviour
         {
             if (inventario[0] != null)
             {
-                if (Input.GetKeyDown("space"))
+                if (Input.GetKeyDown("space") && movimiento.cercaNPC == false)
                 {
                     inventario[0].transform.parent = null;
                     inventario = new GameObject[tama];
@@ -110,4 +112,14 @@ public class Inventario : MonoBehaviour
         return null;
     }
 
+    public bool tieneItem()
+    {
+        print("Inv: " + inventario[0]);
+        if (inventario[0] != null)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
