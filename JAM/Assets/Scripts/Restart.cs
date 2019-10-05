@@ -8,6 +8,7 @@ public class Restart : MonoBehaviour
 {
     public float total;
     public Text timerF;
+    
     // Start is called before the first frame update
     void Start()
     {

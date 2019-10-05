@@ -28,16 +28,8 @@ public class Movimiento : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Recogible")
-        {
-            //print(collision.gameObject.tag);
-            if (inventario.actual < inventario.tama)
-            {
-                inventario.inventario[inventario.actual] = collision.gameObject;
-                inventario.actual++;
-                collision.gameObject.SetActive(false);
-            }
-            
-            //Destroy(collision.gameObject , 0);
+        { 
+            inventario.agregaItem(collision.gameObject);
         }
     }
 

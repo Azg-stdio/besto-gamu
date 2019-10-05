@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bc030c484a1954ca6fe1a2c38765fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  total: 30
+  total: 10
   timerF: {fileID: 1950255760}
 --- !u!1183024399 &534669907
 LookAtConstraint:
@@ -1081,6 +1081,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704295200}
   m_CullTransparentMesh: 0
+--- !u!1 &744607349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744607350}
+  - component: {fileID: 744607351}
+  m_Layer: 0
+  m_Name: GLOBAL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &744607350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744607349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744607351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744607349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6797d8af873a449419083923fde6833a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventario: []
+  prefabsitems:
+  - {fileID: 4326751276142899981, guid: d5435afd0e3351d4cb5829ac85d1daee, type: 3}
+  - {fileID: 4326751276142899981, guid: f89600e1289b2124bad4d7b4ef0c9b91, type: 3}
 --- !u!1 &747837761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,11 +1788,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cdbfd630662bb4ea20330b47de162b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventario: []
-  imagenes: []
+  imagenes:
+  - {fileID: 704295202}
+  - {fileID: 929347799}
+  - {fileID: 747837763}
+  - {fileID: 439275363}
+  - {fileID: 1471713602}
+  - {fileID: 153952722}
   tama: 6
   actual: 0
   panel: {fileID: 1900666656}
+  globalobj: {fileID: 744607351}
 --- !u!114 &1029475506
 MonoBehaviour:
   m_ObjectHideFlags: 0
