@@ -45,12 +45,17 @@ public class Movimiento : MonoBehaviour
             print(inventario.inventario);
             if (NPC != null && inventario.tieneItem())
             {
-                print("entrega a NPC");
+                
                 var inventarioNPC = (InventarioNPC)NPC.GetComponent("InventarioNPC");
-                inventarioNPC.recibe(inventario.inventario[0]);
-                inventario.inventario[0] = null;
-                inventario.actual = 0;
-                restauraresaltaNPC(NPC);
+                if (inventarioNPC.validaObjeto(inventario.inventario[0]))
+                {
+                    print("entrega a NPC");
+                    inventarioNPC.recibe(inventario.inventario[0]);
+                    inventario.inventario[0] = null;
+                    inventario.actual = 0;
+                    restauraresaltaNPC(NPC);
+                }
+
             }
         }
 
