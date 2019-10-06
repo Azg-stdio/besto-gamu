@@ -27,6 +27,7 @@ public class InventarioNPC : MonoBehaviour
         {
             inventario[actual] = obj;
             obj.transform.parent = gameObject.transform.parent;
+            obj.transform.position = gameObject.transform.position;
             actual++;
         }
     }

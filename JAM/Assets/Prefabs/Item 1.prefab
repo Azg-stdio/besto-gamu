@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4326751276142900019}
   - component: {fileID: 4326751276142900018}
   - component: {fileID: 114138684448282652}
+  - component: {fileID: 136887014559576258}
   m_Layer: 0
   m_Name: Item 1
   m_TagString: Recogible
@@ -87,9 +88,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326751276142899981}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 2
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -107,3 +108,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: item2
   imagen: {fileID: 21300000, guid: a27cd5b027753c54aad8873b0a6e39ab, type: 3}
+  materialOriginal: {fileID: 0}
+  tiempo: 1
+  soltado: 0
+  ignorado: {fileID: 0}
+--- !u!136 &136887014559576258
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326751276142899981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

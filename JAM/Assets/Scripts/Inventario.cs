@@ -12,7 +12,7 @@ public class Inventario : MonoBehaviour
     public int actual = 0;
     public GameObject panel;
     public global globalobj;
-    public Movimiento movimiento;
+    public Movimiento movimiento; 
 
     // Start is called before the first frame update
     void Start()
@@ -51,10 +51,7 @@ public class Inventario : MonoBehaviour
             {
                 if (Input.GetKeyDown("space") && movimiento.cercaNPC == false)
                 {
-                    inventario[0].transform.parent = null;
-                    inventario = new GameObject[tama];
-                    tama = 1;
-                    actual = 0;
+                    suelta();
                 }
                 
                 
@@ -122,4 +119,17 @@ public class Inventario : MonoBehaviour
             return false;
         }
     }
+
+    void suelta()
+    {
+        inventario[0].transform.parent = null;
+        Physics.IgnoreCollision(inventario[0].GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true);
+        ((datos)inventario[0].GetComponent("datos")).soltado = true;
+        ((datos)inventario[0].GetComponent("datos")).ignorado = gameObject.GetComponent<CapsuleCollider>();
+        inventario = new GameObject[tama];
+        tama = 1;
+        actual = 0;
+    }
+
+
 }
