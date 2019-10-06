@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Movimiento : MonoBehaviour
@@ -82,7 +83,6 @@ public class Movimiento : MonoBehaviour
         if (obj.tag == "NPC")
         {
             npcMaterial = ((MeshRenderer)obj.GetComponentInChildren<MeshRenderer>()).material;
-            print("entra: "+npcMaterial);
             cercaNPC = true;
             NPC = obj;
 
@@ -141,7 +141,21 @@ public class Movimiento : MonoBehaviour
         meshR = (MeshRenderer)npc.GetComponentInChildren<MeshRenderer>();
         if (meshR != null)
         {
-            meshR.material = iluminado;
+
+            meshR.material.EnableKeyword("_EmissionColor");
+            meshR.material.SetColor("_Color", new Color(0.0927F, 0.4852F, 0.2416F, 0.42F));
+            print("entra: " + meshR.material.GetColor("_Color"));
+            print("entra2: " + npcMaterial.GetColor("_Color"));
+            //meshR.sharedMaterial.SetColor("_EmissionColor", new Color(0.0927F, 0.4852F, 0.2416F, 0.42F));
+            //meshR.material.SetInt("g_bUnlit", 1); ;
+            //print("poscolor: " + meshR.material.GetColor("_EmissionColor"));
+            /*
+            List<string> props = new List<string>();
+            for (int i = 0; i < ShaderUtil.GetPropertyCount(s); ++i)
+                props.Add(ShaderUtil.GetPropertyName(s, i) + " - " + i);
+            Debug.Log(string.Join("\n", props.ToArray()));
+            */
+
         }
 
     }
@@ -152,10 +166,10 @@ public class Movimiento : MonoBehaviour
         
         if (meshR != null)
         {
-            print("mat: "+meshR.material);
-            meshR.material = npcMaterial;
-            print("restaura npc: "+npcMaterial);
-            print("post mat: " + meshR.material);
+            //print("mat: "+meshR.material);
+            meshR.material.SetColor("_Color", new Color(1F, 1F, 1F, 1F));
+            //print("restaura npc: "+npcMaterial);
+            //print("post mat: " + meshR.material);
         }
     }
 
