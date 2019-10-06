@@ -162,7 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1b194b3e8ca8c49a57ff7ea64769c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelWithText: {fileID: 651443111028129027}
   textMesh: {fileID: 4445857119563801833}
+  lineSpliter: 44
+  npcDialogsInput: []
+  obj: {fileID: 0}
 --- !u!1 &4445857119563801835
 GameObject:
   m_ObjectHideFlags: 0
