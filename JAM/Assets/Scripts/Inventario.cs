@@ -11,7 +11,7 @@ public class Inventario : MonoBehaviour
     public int tama;
     public int actual = 0;
     public GameObject panel;
-    public global globalobj;
+    //public global globalobj;
     public Movimiento movimiento;
     public CapsuleCollider coll;
 
@@ -19,27 +19,27 @@ public class Inventario : MonoBehaviour
     void Start()
     {
         coll = gameObject.GetComponent<CapsuleCollider>();
-        globalobj = (global) GameObject.Find("GLOBAL").GetComponent("global");
+        //globalobj = (global) GameObject.Find("GLOBAL").GetComponent("global");
         movimiento = (Movimiento)gameObject.GetComponent("Movimiento");
         inventario = new GameObject[tama];
-        print(globalobj.inventario.Length);
-        if (globalobj.inventario.Length == 0)
-        {
-            globalobj.inventario = new string[tama];
-        }
-        else if(globalobj.inventario.Length != 0)
-        {
-            //print("carga");
-            for (int i = 0; i < globalobj.inventario.Length; i++)
-            {
-                if (globalobj.inventario[i] != null)
-                {
-                    GameObject prefab = buscaPrefab(globalobj.inventario[i]);
-                    //print("prerf: " + prefab);
-                    agregaItem(Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity));
-                }
-            }
-        }
+        //print(globalobj.inventario.Length);
+        //if (globalobj.inventario.Length == 0)
+        //{
+        //    globalobj.inventario = new string[tama];
+        //}
+        //else if(globalobj.inventario.Length != 0)
+        //{
+        //    //print("carga");
+        //    for (int i = 0; i < globalobj.inventario.Length; i++)
+        //    {
+        //        if (globalobj.inventario[i] != null)
+        //        {
+        //            GameObject prefab = buscaPrefab(globalobj.inventario[i]);
+        //            //print("prerf: " + prefab);
+        //            agregaItem(Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity));
+        //        }
+        //    }
+        //}
         
         //imagenes = new Image[tama];
     }
@@ -67,7 +67,7 @@ public class Inventario : MonoBehaviour
         {
             inventario[actual] = obj;
             datos item = (datos)obj.GetComponent("datos");
-            globalobj.inventario[actual] = item.nombre;
+            //globalobj.inventario[actual] = item.nombre;
             actual++;
             obj.transform.parent = gameObject.transform;
             //obj.SetActive(false);
@@ -100,13 +100,13 @@ public class Inventario : MonoBehaviour
 
     public GameObject buscaPrefab(string nombre)
     {
-        for (int i = 0; i < globalobj.prefabsitems.Length; i++){
-            datos item = (datos)globalobj.prefabsitems[i].GetComponent("datos");
-            if (item.nombre == nombre)
-            {
-                return globalobj.prefabsitems[i];
-            }
-        }
+        //for (int i = 0; i < globalobj.prefabsitems.Length; i++){
+        //    datos item = (datos)globalobj.prefabsitems[i].GetComponent("datos");
+        //    if (item.nombre == nombre)
+        //    {
+        //        return globalobj.prefabsitems[i];
+        //    }
+        //}
         return null;
     }
 
