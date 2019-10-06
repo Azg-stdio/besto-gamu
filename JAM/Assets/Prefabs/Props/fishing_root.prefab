@@ -9,9 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307337018599192544}
+  - component: {fileID: 1492593494}
+  - component: {fileID: 1492593495}
+  - component: {fileID: 1492593493}
   m_Layer: 0
   m_Name: fishing_root
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +37,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1492593494
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307337018598828992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0054100673
+  m_Height: 0.053416047
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0.05070805, z: 0.005379518}
+--- !u!136 &1492593495
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307337018598828992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.028458802
+  m_Height: 0.09246433
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0.031183714, z: -0.017944511}
+--- !u!114 &1492593493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307337018598828992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abeb11b642015dd48ae207f27275a44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombre: cana
+  imagen: {fileID: 21300000, guid: eb99a297fe09b3b4d9289f3b0ded0e05, type: 3}
+  materialOriginal: {fileID: 0}
+  tiempo: 1
+  soltado: 0
+  ignorado: {fileID: 0}
 --- !u!1 &307337018598828994
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,7 +96,7 @@ GameObject:
   - component: {fileID: 307337018596898048}
   m_Layer: 0
   m_Name: pCylinder1
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +173,7 @@ GameObject:
   - component: {fileID: 307337018596898050}
   m_Layer: 0
   m_Name: pCylinder2
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +248,7 @@ GameObject:
   - component: {fileID: 307337018599192550}
   m_Layer: 0
   m_Name: polySurface1
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +279,7 @@ GameObject:
   - component: {fileID: 307337018599192552}
   m_Layer: 0
   m_Name: polySurface2
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

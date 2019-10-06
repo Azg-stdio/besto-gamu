@@ -13,6 +13,7 @@ public class Movimiento : MonoBehaviour
     public Material iluminado;
     public MeshRenderer meshR;
     public Material npcMaterial;
+    public Material materialConHijo;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,13 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
         transform.Translate(new Vector3(0, 0, v * multiplicadorMovimiento));
         transform.transform.Rotate(0, h * multiplicadorRotacion, 0, Space.Self);
+        */
         if (Input.GetKeyDown("space"))
         {
             recoge = true;
@@ -62,52 +65,65 @@ public class Movimiento : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //print(other.gameObject.tag);
+        //print(other.gameObject.name);
+        var obj = other.gameObject;
         
-        if (other.gameObject.tag == "Recogible")
+        if (obj.tag == "Recogible")
         {
+            materialConHijo = ((MeshRenderer)obj.GetComponentInChildren<MeshRenderer>()).material;
             resalta(other.gameObject);
+            resaltaConHijo(other.gameObject);
         }
-        if (other.gameObject.tag == "Recogible" && recoge && cercaNPC == false)
+        if (obj.tag == "NPC")
+        {
+            npcMaterial = ((MeshRenderer)obj.GetComponentInChildren<MeshRenderer>()).material;
+            print("entra: "+npcMaterial);
+            cercaNPC = true;
+            NPC = obj;
+
+            resaltaNPC(obj);
+        }
+        if (obj.tag == "Recogible" && recoge && cercaNPC == false)
         {
             
-            inventario.agregaItem(other.gameObject);
+            inventario.agregaItem(obj);
         }
-
-        if (other.gameObject.tag == "NPC")
-        {
-            cercaNPC = true;
-            NPC = other.gameObject;
-            npcMaterial = ((MeshRenderer)other.gameObject.GetComponentInChildren<MeshRenderer>()).material;
-            resaltaNPC(other.gameObject);
-        }
-
-
+        
     }
 
     void OnTriggerStay(Collider other)
     {
+        
         if (other.gameObject.tag == "Recogible" && recoge && cercaNPC == false)
         {
             print("recoge");
             inventario.agregaItem(other.gameObject);
+            restauraMaterial(other.gameObject);
+            restauraresaltaConHijo(other.gameObject);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
         cercaNPC = false;
-        if (NPC != null)
+        NPC = null;
+        if (other.gameObject.tag == "NPC")
         {
             restauraresaltaNPC(other.gameObject);
         }
-        NPC = null;
+        if (other.gameObject.tag == "Recogible")
+        {
+            restauraresaltaConHijo(other.gameObject);
+        }   
         restauraMaterial(other.gameObject);
+        
 
     }
 
     void resalta (GameObject obj)
     {
         meshR = (MeshRenderer) obj.GetComponent("MeshRenderer");
+        
         if (meshR != null)
         {
             meshR.material = iluminado;
@@ -128,9 +144,33 @@ public class Movimiento : MonoBehaviour
     void restauraresaltaNPC(GameObject npc)
     {
         meshR = (MeshRenderer)npc.GetComponentInChildren<MeshRenderer>();
+        
         if (meshR != null)
         {
+            print("mat: "+meshR.material);
             meshR.material = npcMaterial;
+            print("restaura npc: "+npcMaterial);
+            print("post mat: " + meshR.material);
+        }
+    }
+
+    void resaltaConHijo(GameObject npc)
+    {
+        meshR = (MeshRenderer)npc.GetComponentInChildren<MeshRenderer>();
+        if (meshR != null)
+        {
+            meshR.material = iluminado;
+        }
+
+    }
+
+    void restauraresaltaConHijo(GameObject npc)
+    {
+        meshR = (MeshRenderer)npc.GetComponentInChildren<MeshRenderer>();
+
+        if (meshR != null)
+        {
+            meshR.material = materialConHijo;
         }
     }
 

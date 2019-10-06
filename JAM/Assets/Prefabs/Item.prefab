@@ -109,7 +109,7 @@ MonoBehaviour:
   nombre: item1
   imagen: {fileID: 21300000, guid: eb99a297fe09b3b4d9289f3b0ded0e05, type: 3}
   materialOriginal: {fileID: 0}
-  tiempo: 1
+  tiempo: 2
   soltado: 0
   ignorado: {fileID: 0}
 --- !u!136 &2171582290464515982

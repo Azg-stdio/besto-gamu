@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2158692399487691655}
   - component: {fileID: 651072837}
   - component: {fileID: 651072838}
+  - component: {fileID: 135353411}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -59,8 +60,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventario: []
-  tama: 5
+  tama: 10
   actual: 0
+--- !u!136 &135353411
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158692399487691654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7763682
+  m_Height: 2.6942544
+  m_Direction: 1
+  m_Center: {x: -0.012015939, y: 1.2797029, z: 0.012016535}
 --- !u!1 &5699082019971442087
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +89,7 @@ GameObject:
   - component: {fileID: 5699082019969186663}
   m_Layer: 0
   m_Name: model
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,7 +16,15 @@ public class datos : MonoBehaviour
 
     void Start()
     {
-        materialOriginal = ((MeshRenderer)gameObject.GetComponent("MeshRenderer")).material;
+        try
+        {
+            materialOriginal = ((MeshRenderer)gameObject.GetComponent("MeshRenderer")).material;
+        }
+        catch
+        {
+            materialOriginal = ((MeshRenderer)gameObject.GetComponentInChildren<MeshRenderer>()).material;
+        }
+        
         soltado = false;
         timer = tiempo;
     }
@@ -38,7 +46,9 @@ public class datos : MonoBehaviour
         }
         else
         {
-            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), ignorado, false);
+            print("reinicia item");
+            //Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), ignorado, false);
+            gameObject.tag = "Recogible";
             soltado = false;
             timer = tiempo;
         }

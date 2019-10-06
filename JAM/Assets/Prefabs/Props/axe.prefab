@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3327732447856676519}
   m_Layer: 0
   m_Name: pCylinder1
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,11 +26,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3327732447858872417}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.010948582, z: 0}
+  m_LocalPosition: {x: 0, y: 0.010948582, z: 0}
   m_LocalScale: {x: 0.74257946, y: 8.558946, z: 1}
   m_Children: []
   m_Father: {fileID: 3327732447858969669}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3327732447857642599
 MeshFilter:
@@ -86,9 +86,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3327732447858969669}
+  - component: {fileID: 570979396}
+  - component: {fileID: 570979397}
+  - component: {fileID: 570979395}
   m_Layer: 0
   m_Name: axe
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,15 +103,61 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3327732447858872421}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
-  - {fileID: 3327732447858969671}
   - {fileID: 3327732447858969665}
+  - {fileID: 3327732447858969671}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &570979396
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327732447858872421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.037550192
+  m_Height: 0.18244553
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0.016031384, z: 0.008397202}
+--- !u!136 &570979397
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327732447858872421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.018530624
+  m_Height: 0.18244553
+  m_Direction: 1
+  m_Center: {x: 0.0005594542, y: 0.016031384, z: 0.004481378}
+--- !u!114 &570979395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327732447858872421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abeb11b642015dd48ae207f27275a44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombre: hacha
+  imagen: {fileID: 21300000, guid: eb99a297fe09b3b4d9289f3b0ded0e05, type: 3}
+  materialOriginal: {fileID: 0}
+  tiempo: 1
+  soltado: 0
+  ignorado: {fileID: 0}
 --- !u!1 &3327732447858872423
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +171,7 @@ GameObject:
   - component: {fileID: 3327732447856676517}
   m_Layer: 0
   m_Name: pCone1
-  m_TagString: Untagged
+  m_TagString: Recogible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +188,7 @@ Transform:
   m_LocalScale: {x: 0.5995836, y: 3.5964887, z: 3.6843288}
   m_Children: []
   m_Father: {fileID: 3327732447858969669}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3327732447857642597
 MeshFilter:

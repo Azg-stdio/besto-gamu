@@ -12,12 +12,13 @@ public class Inventario : MonoBehaviour
     public int actual = 0;
     public GameObject panel;
     public global globalobj;
-    public Movimiento movimiento; 
+    public Movimiento movimiento;
+    public CapsuleCollider coll;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        coll = gameObject.GetComponent<CapsuleCollider>();
         globalobj = (global) GameObject.Find("GLOBAL").GetComponent("global");
         movimiento = (Movimiento)gameObject.GetComponent("Movimiento");
         inventario = new GameObject[tama];
@@ -111,7 +112,7 @@ public class Inventario : MonoBehaviour
 
     public bool tieneItem()
     {
-        print("Inv: " + inventario[0]);
+        //print("Inv: " + inventario[0]);
         if (inventario[0] != null)
         {
             return true;
@@ -122,10 +123,15 @@ public class Inventario : MonoBehaviour
 
     void suelta()
     {
+
+        //Physics.IgnoreCollision(inventario[0].GetComponent<Collider>(), coll, true);
+
         inventario[0].transform.parent = null;
-        Physics.IgnoreCollision(inventario[0].GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true);
+        inventario[0].tag = "Untagged";
+        print(inventario[0]);
+        
         ((datos)inventario[0].GetComponent("datos")).soltado = true;
-        ((datos)inventario[0].GetComponent("datos")).ignorado = gameObject.GetComponent<CapsuleCollider>();
+        ((datos)inventario[0].GetComponent("datos")).ignorado = coll;
         inventario = new GameObject[tama];
         tama = 1;
         actual = 0;
