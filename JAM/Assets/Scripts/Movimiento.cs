@@ -15,6 +15,7 @@ public class Movimiento : MonoBehaviour
     public MeshRenderer meshR;
     public Material npcMaterial;
     public Material materialConHijo;
+    public Color color;
 
     // Start is called before the first frame update
     void Start()
@@ -143,7 +144,7 @@ public class Movimiento : MonoBehaviour
         {
 
             meshR.material.EnableKeyword("_EmissionColor");
-            meshR.material.SetColor("_Color", new Color(0.0927F, 0.4852F, 0.2416F, 0.42F));
+            meshR.material.SetColor("_Color", color);
             print("entra: " + meshR.material.GetColor("_Color"));
             print("entra2: " + npcMaterial.GetColor("_Color"));
             //meshR.sharedMaterial.SetColor("_EmissionColor", new Color(0.0927F, 0.4852F, 0.2416F, 0.42F));

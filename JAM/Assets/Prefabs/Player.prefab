@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 500
   turnSpeed: 10
+  cameraPosition: {fileID: 0}
 --- !u!114 &114094660537729484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,7 @@ MonoBehaviour:
   meshR: {fileID: 0}
   npcMaterial: {fileID: 0}
   materialConHijo: {fileID: 0}
+  color: {r: 0, g: 0.98260856, b: 1, a: 1}
 --- !u!114 &114630454299002762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +188,6 @@ MonoBehaviour:
   tama: 1
   actual: 0
   panel: {fileID: 0}
-  globalobj: {fileID: 0}
   movimiento: {fileID: 0}
   coll: {fileID: 0}
 --- !u!136 &2098533445
