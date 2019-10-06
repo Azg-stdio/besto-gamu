@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField] private float turnSpeed = 5f;
+    [SerializeField] private Transform cameraPosition = null;
     
     private CharacterController characterController = null;
 
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        movement = cameraPosition.rotation * movement;
+        movement.y = 0f;
+        movement = movement.normalized;
         characterController.SimpleMove(movement * moveSpeed * Time.deltaTime);
 
         if(movement.magnitude > 0)
