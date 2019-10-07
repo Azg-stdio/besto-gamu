@@ -68,7 +68,7 @@ MonoBehaviour:
   entregaPunto: {fileID: 5742591750022834653}
   recompensa: {fileID: 3640478906715974029, guid: 46160e42628498947b4cba3a2a8bfbef,
     type: 3}
-  esperado: {fileID: 3640478906715974029, guid: 46160e42628498947b4cba3a2a8bfbef,
+  esperado: {fileID: 3327732447858872421, guid: 57478cd82793a5c4098755c5834d61e4,
     type: 3}
 --- !u!136 &135353411
 CapsuleCollider:

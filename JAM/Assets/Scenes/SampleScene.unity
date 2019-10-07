@@ -651,11 +651,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 651072838, guid: 4d9e306a14354cd4d867e6391071c536, type: 3}
-      propertyPath: esperado
-      value: 
-      objectReference: {fileID: 3327732447858872421, guid: 57478cd82793a5c4098755c5834d61e4,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9e306a14354cd4d867e6391071c536, type: 3}
 --- !u!1 &170076733
@@ -1103,32 +1098,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6513159658784609099, guid: dc4c2700f0e89394eb710f89482b3972,
         type: 3}
-      propertyPath: moveSpeed
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513159658784609099, guid: dc4c2700f0e89394eb710f89482b3972,
-        type: 3}
       propertyPath: cameraPosition
       value: 
       objectReference: {fileID: 1211827883}
-    - target: {fileID: 2098533449, guid: dc4c2700f0e89394eb710f89482b3972, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098533449, guid: dc4c2700f0e89394eb710f89482b3972, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098533449, guid: dc4c2700f0e89394eb710f89482b3972, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2098533448, guid: dc4c2700f0e89394eb710f89482b3972, type: 3}
       propertyPath: timerF
       value: 
       objectReference: {fileID: 1646764557}
-    m_RemovedComponents:
-    - {fileID: 2098533449, guid: dc4c2700f0e89394eb710f89482b3972, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc4c2700f0e89394eb710f89482b3972, type: 3}
 --- !u!1001 &341547640
 PrefabInstance:
@@ -3020,6 +2997,7 @@ MonoBehaviour:
   meshR: {fileID: 0}
   npcMaterial: {fileID: 0}
   materialConHijo: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1035804280
 PrefabInstance:
   m_ObjectHideFlags: 0
